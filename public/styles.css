@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Starting UI */
+.start-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.start-container h1 {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.start-container p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+#usernameInput {
+    padding: 12px;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+#startButton {
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+#startButton:hover {
+    background: #0056b3;
+}
+
+/* Chat UI */
+.chat-container {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    height: 85vh;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    position: relative;
+}
+
+.chat-header {
+    padding: 15px;
+    background: #007bff;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#darkModeToggle:hover {
+    transform: scale(1.2);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message.self {
+    background: #007bff;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.other {
+    background: #e9ecef;
+    color: #333;
+    margin-right: auto;
+    text-align: left;
+}
+
+.message a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-items: center;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.file-label {
+    font-size: 1.5em;
+    color: #007bff;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.file-label:hover {
+    color: #0056b3;
+}
+
+#sendButton {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#sendButton:hover {
+    background: #0056b3;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.dark-mode .start-container,
+.dark-mode .chat-container {
+    background: #2c2c2c;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .chat-header {
+    background: #1e3a8a;
+}
+
+.dark-mode .message.self {
+    background: #1e3a8a;
+}
+
+.dark-mode .message.other {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode .chat-input {
+    background: #2c2c2c;
+    border-top: 1px solid #555;
+}
+
+.dark-mode #usernameInput,
+.dark-mode #messageInput {
+    border-color: #555;
+    background: #333;
+    color: #fff;
+}
+
+.dark-mode .file-label {
+    color: #1e3a8a;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .chat-container {
+        height: 100vh;
+        border-radius: 0;
+    }
+    .chat-input {
+        flex-direction: column;
+    }
+    .file-label, #sendButton {
+        margin: 10px 0 0 0;
+    }
+}

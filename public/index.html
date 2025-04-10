@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for paperclip icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Starting UI -->
+    <div class="start-container" id="startContainer">
+        <h1>Vibe Tings</h1>
+        <p>Join the conversation!</p>
+        <input type="text" id="usernameInput" placeholder="Your Username">
+        <button id="startButton">Enter Chat</button>
+    </div>
+
+    <!-- Chat UI -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            <h2>Vibe Tings Room</h2>
+            <button id="darkModeToggle" title="Toggle Dark Mode">☀️</button>
+        </div>
+        <div class="chat-messages" id="messageArea"></div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <label for="fileInput" class="file-label"><i class="fas fa-paperclip"></i></label>
+            <input type="file" id="fileInput" accept="image/*, .pdf" style="display: none;">
+            <button id="sendButton">Send</button>
+        </div>
+        <footer>© 2025 Travis. All rights reserved.</footer>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
